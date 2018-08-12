@@ -7,6 +7,9 @@ const DIR = path.join(os.tmpdir(), 'jest_puppeteer_global_setup');
 
 class PuppeteerEnvironment extends NodeEnvironment {
   async setup() {
+    if (process.env.UNIT_TEST) {
+      return;
+    }
     await super.setup();
     // get the wsEndpoint
     const wsEndpoint = fs.readFileSync(path.join(DIR, 'wsEndpoint'), 'utf8');

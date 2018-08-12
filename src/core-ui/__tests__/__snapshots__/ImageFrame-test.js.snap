@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ImageFrame should render with anchor 1`] = `
-<a
-  href="link"
-  rel="noopener noreferrer"
-  target="_blank"
->
-  <div
-    style={
-      Object {
-        "background": "red",
-        "height": 340,
-        "margin": 10,
-        "position": "relative",
-        "width": 255,
-      }
+<div
+  style={
+    Object {
+      "background": "red",
+      "height": 340,
+      "margin": 10,
+      "position": "relative",
+      "width": 255,
     }
+  }
+>
+  <a
+    href="link"
+    rel="noopener noreferrer"
+    target="_blank"
   >
     <img
       alt="Title"
@@ -43,8 +43,8 @@ exports[`ImageFrame should render with anchor 1`] = `
     >
       Title
     </div>
-  </div>
-</a>
+  </a>
+</div>
 `;
 
 exports[`ImageFrame should render without problem 1`] = `
@@ -59,31 +59,33 @@ exports[`ImageFrame should render without problem 1`] = `
     }
   }
 >
-  <img
-    alt="Title"
-    height="340"
-    src="imageUri"
-    width="255"
-  />
-  <div
-    style={
-      Object {
-        "alignItems": "center",
-        "background": "rgba(0, 0, 0, 0.5)",
-        "bottom": 0,
-        "color": "white",
-        "display": "flex",
-        "flex": 1,
-        "fontWeight": "400",
-        "justifyContent": "center",
-        "left": 0,
-        "padding": "20px 5px",
-        "position": "absolute",
-        "right": 0,
+  <div>
+    <img
+      alt="Title"
+      height="340"
+      src="imageUri"
+      width="255"
+    />
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "background": "rgba(0, 0, 0, 0.5)",
+          "bottom": 0,
+          "color": "white",
+          "display": "flex",
+          "flex": 1,
+          "fontWeight": "400",
+          "justifyContent": "center",
+          "left": 0,
+          "padding": "20px 5px",
+          "position": "absolute",
+          "right": 0,
+        }
       }
-    }
-  >
-    Title
+    >
+      Title
+    </div>
   </div>
 </div>
 `;
