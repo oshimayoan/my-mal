@@ -18,7 +18,9 @@
     "test-local": "yarn test-src --ci --notify",
     "test-src": "react-scripts test --env=jsdom --verbose --silent",
     "typecheck": "flow .",
-    "postinstall": "flow-typed install"
+    "postinstall": "flow-typed install",
+    "precommit": "yarn lint && yarn typecheck",
+    "prepush": "CI=true yarn test"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.6",
@@ -31,6 +33,7 @@
     "eslint-plugin-jsx-a11y": "5.1.1",
     "eslint-plugin-react": "^7.10.0",
     "flow-bin": "^0.78.0",
+    "husky": "^0.14.3",
     "prettier-eslint": "^8.8.2",
     "prettier-eslint-cli": "^4.7.1",
     "react-test-renderer": "^16.4.2"
