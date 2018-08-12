@@ -1,0 +1,41 @@
+{
+  "name": "my-mal",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "format": "prettier-eslint --write \"src/**/*.js\"",
+    "lint": "eslint . --max-warnings 0",
+    "test": "yarn lint && yarn typecheck && yarn test-src",
+    "test-local": "yarn test-src --ci --notify",
+    "test-src": "react-scripts test --env=jsdom --verbose --silent",
+    "typecheck": "flow .",
+    "postinstall": "flow-typed install"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.3.0",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jest": "^21.21.0",
+    "eslint-plugin-jsx-a11y": "5.1.1",
+    "eslint-plugin-react": "^7.10.0",
+    "flow-bin": "^0.78.0",
+    "prettier-eslint": "^8.8.2",
+    "prettier-eslint-cli": "^4.7.1"
+  },
+  "prettier": {
+    "bracketSpacing": false,
+    "singleQuote": true,
+    "trailingComma": "all"
+  }
+}
