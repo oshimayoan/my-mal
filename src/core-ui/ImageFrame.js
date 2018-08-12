@@ -1,6 +1,6 @@
 // @flow strict
 
-import React from 'react';
+import React, {Fragment} from 'react';
 
 type Props = $Exact<{
   imageUri: string,
@@ -9,16 +9,8 @@ type Props = $Exact<{
 }>;
 
 export default function ImageFrame(props: Props) {
-  let component = (
-    <div
-      style={{
-        width: 255,
-        height: 340,
-        margin: 10,
-        background: 'red',
-        position: 'relative',
-      }}
-    >
+  let content = (
+    <Fragment>
       <img src={props.imageUri} alt={props.title} width="255" height="340" />
       <div
         style={{
@@ -38,15 +30,25 @@ export default function ImageFrame(props: Props) {
       >
         {props.title}
       </div>
-    </div>
+    </Fragment>
   );
-
-  if (!props.link) {
-    return component;
-  }
   return (
-    <a href={props.link} target="_blank" rel="noopener noreferrer">
-      {component}
-    </a>
+    <div
+      style={{
+        width: 255,
+        height: 340,
+        margin: 10,
+        background: 'red',
+        position: 'relative',
+      }}
+    >
+      {!props.link ? (
+        <div>{content}</div>
+      ) : (
+        <a href={props.link} target="_blank" rel="noopener noreferrer">
+          {content}
+        </a>
+      )}
+    </div>
   );
 }
