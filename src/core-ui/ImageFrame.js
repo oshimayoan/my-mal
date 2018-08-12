@@ -6,6 +6,7 @@ type Props = $Exact<{
   imageUri: string,
   title: string,
   link?: string,
+  dataTest?: string,
 }>;
 
 export default function ImageFrame(props: Props) {
@@ -41,6 +42,7 @@ export default function ImageFrame(props: Props) {
         background: 'red',
         position: 'relative',
       }}
+      data-test={props.dataTest}
     >
       {!props.link ? (
         <div>{content}</div>

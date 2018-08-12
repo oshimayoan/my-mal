@@ -66,10 +66,15 @@ class App extends Component<{}, State> {
               imageUri={animeList[i].imageUri}
               title={animeList[i].title}
               link={animeList[i].url}
+              dataTest={`imageFrame${i}`}
             />,
           ];
         }
-        return <div style={{display: 'flex', flex: 1}}>{animes}</div>;
+        return (
+          <div style={{display: 'flex', flex: 1}} data-test="appContainer">
+            {animes}
+          </div>
+        );
       }
     }
   }

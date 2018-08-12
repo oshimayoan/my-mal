@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "eslint": "^5.3.0",
     "jikanjs": "^0.5.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
@@ -22,7 +21,7 @@
     "typecheck": "flow .",
     "postinstall": "flow-typed install",
     "precommit": "yarn lint && yarn typecheck",
-    "prepush": "CI=true yarn test",
+    "prepush": "CI=true yarn test-all",
     "test-e2e": "jest --testPathPattern __e2e__ --silent --runInBand",
     "test-all": "yarn lint && yarn typecheck && yarn test-src && yarn test-e2e"
   },
@@ -32,6 +31,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "eslint": "^5.3.0",
     "eslint-config-react-app": "^2.1.0",
     "eslint-plugin-babel": "^5.1.0",
     "eslint-plugin-flowtype": "^2.50.0",
