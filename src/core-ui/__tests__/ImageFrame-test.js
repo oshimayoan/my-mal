@@ -11,4 +11,11 @@ describe('ImageFrame', () => {
     );
     expect(component).toMatchSnapshot();
   });
+
+  it('should render with anchor', () => {
+    let component = renderer.create(
+      <ImageFrame imageUri="imageUri" title="Title" link="link" />,
+    );
+    expect(component).toMatchSnapshot();
+  });
 });

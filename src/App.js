@@ -65,6 +65,7 @@ class App extends Component<{}, State> {
               key={i}
               imageUri={animeList[i].imageUri}
               title={animeList[i].title}
+              link={animeList[i].url}
             />,
           ];
         }

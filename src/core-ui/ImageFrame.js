@@ -5,10 +5,11 @@ import React from 'react';
 type Props = $Exact<{
   imageUri: string,
   title: string,
+  link?: string,
 }>;
 
 export default function ImageFrame(props: Props) {
-  return (
+  let component = (
     <div
       style={{
         width: 255,
@@ -38,5 +39,14 @@ export default function ImageFrame(props: Props) {
         {props.title}
       </div>
     </div>
+  );
+
+  if (!props.link) {
+    return component;
+  }
+  return (
+    <a href={props.link} target="_blank" rel="noopener noreferrer">
+      {component}
+    </a>
   );
 }
