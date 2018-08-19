@@ -4,9 +4,7 @@ import React, {Component} from 'react';
 import JikanAPI from 'jikanjs';
 import ImageFrame from './core-ui/ImageFrame';
 
-type Season = 'spring' | 'summer' | 'fall' | 'winter';
-
-type AnimeType = 'TV' | 'OVA' | 'ONA' | 'Movie' | 'Special';
+import type {Season, AnimeType} from 'jikanjs';
 
 type AnimeList = {|
   id: number,
@@ -14,22 +12,6 @@ type AnimeList = {|
   title: string,
   imageUri: string,
   type: AnimeType,
-|};
-
-type LoadSeasonResult = {|
-  request_cached: boolean,
-  request_hash: string,
-  season: Array<
-    {|
-      mal_id: number,
-      url: string,
-      title: string,
-      image_url: string,
-      type: AnimeType,
-    |},
-  >,
-  season_name: string,
-  season_year: number,
 |};
 
 type State = {|
@@ -81,7 +63,7 @@ class App extends Component<{}, State> {
 
   _fetchSeasonalAnime = async (year: number, season: Season) => {
     try {
-      let result: LoadSeasonResult = await JikanAPI.loadSeason(year, season);
+      let result = await JikanAPI.loadSeason(year, season);
       this.setState({
         animeList: result.season.map((anime) => ({
           id: anime.mal_id,

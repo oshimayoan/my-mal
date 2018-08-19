@@ -12,9 +12,27 @@
  * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
-
+ 
 declare module 'jikanjs' {
-  declare module.exports: any;
+  declare type Season = 'spring' | 'summer' | 'fall' | 'winter';
+
+  declare type AnimeType = 'TV' | 'OVA' | 'ONA' | 'Movie' | 'Special';
+  
+  declare type LoadSeasonResult = {|
+    request_cached: boolean,
+    request_hash: string,
+    season: Array <{|
+      mal_id: number,
+      url: string,
+      title: string,
+      image_url: string,
+      type: AnimeType,
+    |}>,
+    season_name: string,
+    season_year: number,
+  |};
+
+  declare module.exports: { loadSeason: (year: number, season: Season) => Promise<LoadSeasonResult>};
 }
 
 /**
