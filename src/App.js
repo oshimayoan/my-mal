@@ -8,34 +8,34 @@ type Season = 'spring' | 'summer' | 'fall' | 'winter';
 
 type AnimeType = 'TV' | 'OVA' | 'ONA' | 'Movie' | 'Special';
 
-type AnimeList = $Exact<{
+type AnimeList = {|
   id: number,
   url: string,
   title: string,
   imageUri: string,
   type: AnimeType,
-}>;
+|};
 
-type LoadSeasonResult = $Exact<{
+type LoadSeasonResult = {|
   request_cached: boolean,
   request_hash: string,
   season: Array<
-    $Exact<{
+    {|
       mal_id: number,
       url: string,
       title: string,
       image_url: string,
       type: AnimeType,
-    }>,
+    |},
   >,
   season_name: string,
   season_year: number,
-}>;
+|};
 
-type State = $Exact<{
+type State = {|
   isLoadAnimeList: boolean,
   animeList: Array<AnimeList>,
-}>;
+|};
 
 class App extends Component<{}, State> {
   state = {
