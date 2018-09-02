@@ -1,12 +1,14 @@
-// @flow strict
+// @flow strict-local
 
 const URL = 'http://localhost:3000';
 
 describe('Main', () => {
-  let page;
+  let page: Page;
 
   beforeAll(async () => {
-    page = await global.__BROWSER__.newPage();
+    let browser: Browser = global.__BROWSER__;
+    let newPage: Promise<Page> = browser.newPage();
+    page = await newPage;
   }, 10000);
 
   beforeEach(async () => {
