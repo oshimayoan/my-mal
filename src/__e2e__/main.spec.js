@@ -1,5 +1,7 @@
 // @flow strict-local
 
+import type {Browser, Page} from 'puppeteer';
+
 const URL = 'http://localhost:3000';
 
 describe('Main', () => {
@@ -7,7 +9,7 @@ describe('Main', () => {
 
   beforeAll(async () => {
     let browser: Browser = global.__BROWSER__;
-    let newPage: Promise<Page> = browser.newPage();
+    let newPage = browser.newPage();
     page = await newPage;
   }, 10000);
 

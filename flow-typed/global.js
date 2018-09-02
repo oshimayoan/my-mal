@@ -29,13 +29,3 @@ declare type Window = {
     options?: {[key: string]: mixed},
   ) => void,
 };
-
-declare type Page = {|
-  goto: (url: string) => Promise<void>,
-  waitForSelector: (selector: string) => Promise<void>,
-  click: (selector: string) => Promise<void>,
-  waitFor: (time: number) => Promise<void>,
-|};
-declare type Browser = {|
-  newPage: () => Promise<Page>,
-|};
