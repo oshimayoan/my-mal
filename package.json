@@ -9,6 +9,7 @@
     "react-scripts": "2.0.0-next.a671462c"
   },
   "scripts": {
+    "showcase": "yarn docz dev",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
@@ -23,13 +24,14 @@
     "precommit": "yarn lint && yarn typecheck",
     "prepush": "CI=true yarn test",
     "test-e2e": "jest --testPathPattern __e2e__ --silent --runInBand",
-    "test-all": "yarn lint && yarn typecheck && yarn test-src && yarn test-e2e",
-    "showcase": "yarn docz dev"
+    "test-all": "yarn lint && yarn typecheck && yarn test-src && yarn test-e2e"
   },
   "devDependencies": {
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-transform-flow-strip-types": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "docz": "^0.10.3",
     "eslint-config-react-app": "^2.1.0",
     "eslint-plugin-babel": "^5.1.0",

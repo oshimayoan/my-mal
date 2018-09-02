@@ -1,5 +1,7 @@
 /node_modules
 /coverage
 /flow-typed/npm
+/showcase
+/.docz
 *.json
 /src/registerServiceWorker.js

@@ -1,0 +1,41 @@
+{
+  "config": {
+    "title": "My Mal Showcase",
+    "description": "My awesome app using docz",
+    "themeConfig": {},
+    "ordering": "descending",
+    "version": "0.1.0",
+    "repository": null,
+    "base": "/showcase-image-frame/",
+    "port": 4000
+  },
+  "entries": {
+    "showcase/ImageFrame.mdx": {
+      "name": "ImageFrame",
+      "id": "74fcc5a142cbddcbb9346014f1eecabc",
+      "filepath": "showcase/ImageFrame.mdx",
+      "link": null,
+      "slug": "showcase-image-frame",
+      "route": "/showcase-image-frame",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "imageframe",
+          "value": "Imageframe"
+        },
+        {
+          "depth": 2,
+          "slug": "properties",
+          "value": "Properties"
+        },
+        {
+          "depth": 2,
+          "slug": "basic-usage",
+          "value": "Basic usage"
+        }
+      ]
+    }
+  }
+}
