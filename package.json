@@ -6,7 +6,7 @@
     "jikanjs": "^0.5.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-scripts": "1.1.4"
+    "react-scripts": "2.0.0-next.a671462c"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -18,21 +18,19 @@
     "test-local": "yarn test-src --ci --notify",
     "test-src": "UNIT_TEST=true jest --testPathPattern __tests__ --coverage --verbose --silent",
     "test-watch": "yarn test-src --watch",
-    "typecheck": "flow .",
+    "typecheck": "yarn flow .",
     "postinstall": "flow-typed install",
     "precommit": "yarn lint && yarn typecheck",
     "prepush": "CI=true yarn test",
     "test-e2e": "jest --testPathPattern __e2e__ --silent --runInBand",
-    "test-all": "yarn lint && yarn typecheck && yarn test-src && yarn test-e2e"
+    "test-all": "yarn lint && yarn typecheck && yarn test-src && yarn test-e2e",
+    "showcase": "yarn docz dev"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.6",
-    "babel-jest": "^23.4.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "docz": "^0.10.3",
-    "eslint": "^5.3.0",
     "eslint-config-react-app": "^2.1.0",
     "eslint-plugin-babel": "^5.1.0",
     "eslint-plugin-flowtype": "^2.50.0",
@@ -42,7 +40,6 @@
     "eslint-plugin-react": "^7.10.0",
     "flow-bin": "^0.78.0",
     "husky": "^0.14.3",
-    "jest": "^23.5.0",
     "prettier-eslint": "^8.8.2",
     "prettier-eslint-cli": "^4.7.1",
     "puppeteer": "^1.7.0",
@@ -57,5 +54,17 @@
     "globalSetup": "./jest/setup.js",
     "globalTeardown": "./jest/teardown.js",
     "testEnvironment": "./jest/puppeteer_environment.js"
+  },
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">0.25%",
+      "not op_mini all",
+      "ie 11"
+    ]
   }
 }
