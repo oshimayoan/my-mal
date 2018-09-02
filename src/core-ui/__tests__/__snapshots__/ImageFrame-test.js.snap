@@ -2,6 +2,7 @@
 
 exports[`ImageFrame should render with anchor 1`] = `
 <div
+  data-test={undefined}
   style={
     Object {
       "background": "red",
@@ -49,6 +50,7 @@ exports[`ImageFrame should render with anchor 1`] = `
 
 exports[`ImageFrame should render without problem 1`] = `
 <div
+  data-test={undefined}
   style={
     Object {
       "background": "red",
