@@ -53,7 +53,7 @@ class App extends Component<{}, State> {
           ];
         }
         return (
-          <div style={{display: 'flex', flex: 1}} data-test="appContainer">
+          <div style={{display: 'flex', flex: 1}} data-testid="appContainer">
             {animes}
           </div>
         );
