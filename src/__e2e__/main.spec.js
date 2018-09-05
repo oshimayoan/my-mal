@@ -20,9 +20,9 @@ describe('Main', () => {
   it(
     'should open MAL page',
     async () => {
-      await page.waitForSelector('[data-test="appContainer"]');
-      await page.waitForSelector('[data-test="imageFrame0"]');
-      await page.click('[data-test="imageFrame0"]');
+      await page.waitForSelector('[data-testid="appContainer"]');
+      await page.waitForSelector('[data-testid="imageFrame0"]');
+      await page.click('[data-testid="imageFrame0"]');
       await page.waitFor(3000);
     },
     20000,

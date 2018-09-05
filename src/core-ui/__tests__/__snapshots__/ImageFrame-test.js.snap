@@ -1,92 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ImageFrame should render with anchor 1`] = `
-<div
-  data-test={undefined}
-  style={
-    Object {
-      "background": "red",
-      "height": 340,
-      "margin": 10,
-      "position": "relative",
-      "width": 255,
-    }
-  }
+<a
+  data-testid="imageAnchor"
+  href="link"
+  rel="noopener noreferrer"
+  target="_blank"
 >
-  <a
-    href="link"
-    rel="noopener noreferrer"
-    target="_blank"
+  <img
+    alt="Title"
+    height="340"
+    src="imageUri"
+    width="255"
+  />
+  <div
+    style="position: absolute; left: 0px; right: 0px; bottom: 0px; background: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center; padding: 20px 5px; color: white; font-weight: 400;"
   >
-    <img
-      alt="Title"
-      height="340"
-      src="imageUri"
-      width="255"
-    />
-    <div
-      style={
-        Object {
-          "alignItems": "center",
-          "background": "rgba(0, 0, 0, 0.5)",
-          "bottom": 0,
-          "color": "white",
-          "display": "flex",
-          "flex": 1,
-          "fontWeight": "400",
-          "justifyContent": "center",
-          "left": 0,
-          "padding": "20px 5px",
-          "position": "absolute",
-          "right": 0,
-        }
-      }
-    >
-      Title
-    </div>
-  </a>
-</div>
+    Title
+  </div>
+</a>
 `;
 
-exports[`ImageFrame should render without problem 1`] = `
-<div
-  data-test={undefined}
-  style={
-    Object {
-      "background": "red",
-      "height": 340,
-      "margin": 10,
-      "position": "relative",
-      "width": 255,
-    }
-  }
->
-  <div>
-    <img
-      alt="Title"
-      height="340"
-      src="imageUri"
-      width="255"
-    />
-    <div
-      style={
-        Object {
-          "alignItems": "center",
-          "background": "rgba(0, 0, 0, 0.5)",
-          "bottom": 0,
-          "color": "white",
-          "display": "flex",
-          "flex": 1,
-          "fontWeight": "400",
-          "justifyContent": "center",
-          "left": 0,
-          "padding": "20px 5px",
-          "position": "absolute",
-          "right": 0,
-        }
-      }
-    >
-      Title
+exports[`ImageFrame should render without anchor 1`] = `
+<div>
+  <div
+    style="width: 255px; height: 340px; margin: 10px; background: red; position: relative;"
+  >
+    <div>
+      <img
+        alt="Title"
+        height="340"
+        src="imageUri"
+        width="255"
+      />
+      <div
+        style="position: absolute; left: 0px; right: 0px; bottom: 0px; background: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center; padding: 20px 5px; color: white; font-weight: 400;"
+      >
+        Title
+      </div>
     </div>
   </div>
 </div>

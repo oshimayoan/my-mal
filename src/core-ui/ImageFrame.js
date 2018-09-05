@@ -42,12 +42,17 @@ export default function ImageFrame(props: Props) {
         background: 'red',
         position: 'relative',
       }}
-      data-test={props.dataTest}
+      data-testid={props.dataTest}
     >
       {!props.link ? (
         <div>{content}</div>
       ) : (
-        <a href={props.link} target="_blank" rel="noopener noreferrer">
+        <a
+          href={props.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-testid="imageAnchor"
+        >
           {content}
         </a>
       )}

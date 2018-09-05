@@ -1,21 +1,20 @@
 // @flow strict-local
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import {render} from 'react-testing-library';
 import ImageFrame from '../ImageFrame';
 
 describe('ImageFrame', () => {
-  it('should render without problem', () => {
-    let component = renderer.create(
-      <ImageFrame imageUri="imageUri" title="Title" />,
-    );
-    expect(component).toMatchSnapshot();
+  it('should render without anchor', () => {
+    let {container} = render(<ImageFrame imageUri="imageUri" title="Title" />);
+    expect(container).toMatchSnapshot();
   });
 
   it('should render with anchor', () => {
-    let component = renderer.create(
+    let {getByTestId} = render(
       <ImageFrame imageUri="imageUri" title="Title" link="link" />,
     );
+    let component = getByTestId('imageAnchor');
     expect(component).toMatchSnapshot();
   });
 });
