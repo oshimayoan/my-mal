@@ -13,8 +13,22 @@
  * https://github.com/flowtype/flow-typed
  */
 
+type GetsAndQueries = {|
+  getByTestId: (testID: string) => HTMLElement,
+|};
+
+type RenderReturn = GetsAndQueries & {|
+  container: HTMLElement,
+  baseElement: HTMLElement,
+  debug: (baseElement?: HTMLElement) => void,
+  rerender: (ui: React$Element<*>) => void,
+  unmount: () => boolean,
+|};
+ 
 declare module 'react-testing-library' {
-  declare module.exports: any;
+  declare module.exports: {
+    render: (ui: React$Element<any>, options?: {[string]: *}) => RenderReturn,
+  };
 }
 
 /**
