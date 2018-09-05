@@ -17,7 +17,7 @@
     "lint": "eslint . --max-warnings 0",
     "test": "yarn lint && yarn typecheck && yarn test-src",
     "test-local": "yarn test-src --ci --notify",
-    "test-src": "UNIT_TEST=true jest --testPathPattern __tests__ --coverage --verbose --silent",
+    "test-src": "UNIT_TEST=true jest --testPathPattern __tests__ --env jsdom --coverage --verbose --silent",
     "test-watch": "yarn test-src --watch",
     "typecheck": "yarn flow-coverage-report -i 'src/**/*.js' --threshold 90 -x 'src/registerServiceWorker.js'",
     "postinstall": "flow-typed install",
@@ -47,7 +47,9 @@
     "prettier-eslint": "^8.8.2",
     "prettier-eslint-cli": "^4.7.1",
     "puppeteer": "^1.7.0",
-    "react-test-renderer": "^16.4.2"
+    "react-test-renderer": "^16.4.2",
+    "react-testing-library": "^5.0.1",
+    "snapshot-diff": "^0.4.0"
   },
   "prettier": {
     "bracketSpacing": false,
@@ -57,7 +59,8 @@
   "jest": {
     "globalSetup": "./jest/setup.js",
     "globalTeardown": "./jest/teardown.js",
-    "testEnvironment": "./jest/puppeteer_environment.js"
+    "testEnvironment": "./jest/puppeteer_environment.js",
+    "testURL": "http://localhost/"
   },
   "browserslist": {
     "development": [
